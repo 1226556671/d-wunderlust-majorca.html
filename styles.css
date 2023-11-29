@@ -1,0 +1,730 @@
+/* Diane Dinh */
+
+/*--CSS reset--*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* --HTML5 display-role reset for older browsers-- */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--SKIP TO MAIN CONTENT--*/
+#skip {
+    width:1px;
+	height:1px;
+    position:absolute;
+	left:-10000px;
+	top:auto;
+	overflow:hidden;
+}
+  
+  #skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+  
+.sr-only{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0; 
+}
+
+/*CSS Start*/
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+/* -----Colors ---- */ 
+:root{
+    --yellow: #f6d64a;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #eaeaea;
+    --white: #ffffff;
+    --black: #000000;
+    font-size: 16px;
+    font-family: 'Molle', cursive;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ----- HEADER ----- */
+header p, #contact, #contact, #intro, #testimonials, #plan h3{
+	max-width: 90%;
+	margin: 0 auto;
+	white-space: wrap;
+}
+
+h1 {
+	margin-top: 15px;
+	margin-left: 10px;
+	font-size: 55px;
+	overflow-wrap: break-word;
+}
+
+h2 {
+	margin-top: 5px;
+}
+
+h2, h3 {
+	font-size: 40px;
+	margin-bottom: 16px;
+}
+
+h1, h2, h3 {
+	font-family: 'Molle', cursive; 
+	padding-left: 20px;
+}
+
+h4, label {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+h4, p, q, small, nav, button, form, footer a {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+header {
+	background-image: linear-gradient(to bottom, #55BCD5, white);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	height: 230px;
+}
+
+header a {
+	grid-row: 1/2;
+	grid-column: 1/2;
+}
+
+nav {
+	grid-row: 1/2;
+	grid-column: 1/3;
+}
+
+a {
+	margin-top: 15px;
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+header h1 {
+	grid-column: 1/3;
+	grid-row: 2/3;
+}
+
+header p {
+	margin-left: 25px;
+	line-height: 40px;
+	grid-column: 1/3;
+	grid-row: 3/4;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+}
+
+header label {
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+	top: 35px;
+	width: 100px;
+	background-color: #F6D64A;
+	padding: 20px 40px;
+	text-align: center;
+}
+
+header input {
+    display: none;
+}
+
+header input ~ ul {
+	overflow: hidden;
+	max-height: 0;
+    transition: max-height .2s ease-out;
+    margin-top: 30px;
+	text-align: center;
+}
+
+input:checked ~ ul {
+    min-height: 400px;
+	position: absolute;
+    overflow: visible;
+	width: 100%;
+	left: 0;
+	top: 30px;
+}
+ 
+li {
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	background-color: #55BCD5;
+	border: 2px solid black;
+	padding: 30px;
+	margin-bottom: 0px;
+    margin-top: -5px;
+}
+
+.active {
+	background-color: #F6D64A;
+    margin-top: -5px;
+}
+
+
+input:checked ~ label {
+	width: 88%;
+	top: 0;
+	background-color: black;
+	color: white;
+}
+
+#intro {
+	margin-top: 4rem;
+	padding-bottom: 20px;
+}
+
+#intro p {
+	line-height: 2rem;
+	margin-bottom: 2rem;
+}
+
+#main_content {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#img-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	row-gap: 10px;
+	column-gap: 10px;
+}
+
+#img-grid img {
+	width: 100%;
+}
+#plan h3{
+    position:relative; top:5px;
+}
+
+#plan {
+	background-color: #F6D64A;
+	padding-bottom: 1rem;
+	padding-top: 2rem;
+}
+
+#plan div {
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#plan div section {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	background-color: #55BCD5;
+	margin: 20px;
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: white;
+	
+}
+
+#plan div section a, #plan div section h4{
+	margin: 0 auto;
+	padding: 1px;
+}
+
+/* ----- P & FOOTER ----- */
+p {
+	font-size: 18px;
+	padding-left: 20px;
+}
+
+footer p, footer a {
+	font-size:15px;
+}
+
+/* ----- TESTIMONIALS ----- */
+#testimonials {
+	padding: 100px 0px;
+}
+
+#testimonials h3 {
+	font-size: 40px;
+}
+#testimonials h4 {
+    position:relative; top:20px;
+}
+
+#testimonials p {
+	font-size: 20px;
+    position:relative; top:20px;
+}
+
+#testimonials section{
+	text-align: center;
+}
+
+q {
+	font-size: 17px;
+	font-style: italic;
+	quotes: "“" "”";
+    margin-top: 10px;
+    position:relative; top:23px;
+}
+
+q::before {
+	content: open-quote;
+}
+  
+q::after {
+	content: close-quote;
+}
+
+/* ----- ABOUT----- */
+#about {
+	background-color: #499BD2;
+	padding: 135px 20px;
+	margin-bottom: 32px;
+}
+
+#about div{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+#about div p {
+	padding-left: 0px;
+}
+
+#about div section img {
+	width: 100%;
+	height: auto;
+	max-height: 80px;
+	min-height: 20px;
+}
+
+/* ----- FORM----- */
+#contact {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	max-width: 800px;
+	justify-content: center;
+}
+
+.form-required {
+	font-size: 18px;
+	font-weight: normal;
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+}
+
+label, legend {
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+fieldset label {
+	font-weight: normal;
+	text-transform: capitalize;
+}
+
+input, label {
+	display: block;
+}
+
+input, select {
+	border: 2px solid #9B26B0;
+}
+
+input, select {
+	padding: 20px;
+	margin-bottom:20px;
+}
+
+input {
+	width: 91%;
+}
+
+select {
+	appearance: none;
+}
+
+
+.custom-select {
+		width: 100%;
+		border: 1px solid var(--select-border);
+		border-radius: 4px;
+		font-size: 20px;
+		cursor: pointer;
+		line-height: 1px;
+		background-color: #fff;
+		background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+		display: grid;
+		grid-template-areas: "select";
+		align-items: center;
+  }
+
+  .custom-select::after {
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-color: #9B26B0;
+	clip-path: polygon(52% 94%, 90% 20%, 100% 15%, 55% 100%, 49% 100%, 0 16%, 10% 20%);
+	justify-self: end;
+	margin-bottom: 18px;
+	margin-right: 10px;
+}
+
+  select, .custom-select::after {
+	grid-area: select;
+  }
+
+
+form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+fieldset {
+	margin-bottom: 15px;
+}
+
+fieldset label {
+	display: flex;
+	gap: 5px;
+	margin-right: 40px;
+
+}
+
+.radio-label {
+	margin-top: 15px;
+}
+
+.radio-input {
+	display: inline-block;
+	margin-right: 20px;
+	justify-content: center;
+	text-align: center;
+}
+
+
+
+input[type="radio"] {
+	appearance: none;
+  	background-color: #fff; 	
+  	width: 18px;
+  	height: 18px;
+  	border: 4px solid #9B26B0;
+  	border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+	background-image: radial-gradient(#9B26B0 50%, white 50%);
+}
+
+input[type="submit"] {
+	border: none;
+	background-color: #9B26B0;
+	color: white;
+	margin: 0 auto;
+}
+
+.required {
+	color: #9B26B0;
+}
+
+footer {
+	margin-top: 25px;
+	padding-top: 8px;
+	display: grid;
+	text-align: center;
+	background-color: #EAEAEA;
+}
+
+
+@media screen and (min-width: 600px) {
+	header input, header label {
+		display: none;
+	}
+
+	header {
+		padding-top: 10px;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		padding-bottom: 30px;
+	}
+
+	header input ~ ul {
+		overflow: visible;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 2%;
+		margin-top: 64px;
+	}
+
+	li {
+		width: 100px;
+		border: none;
+		background-color: white;
+		color: black;
+		padding: 20px 18px 35px 18px;
+	}
+
+	nav {
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	
+	a:visited {
+		color: black;
+	}
+
+
+	header nav {
+		grid-row: 2/3;
+		grid-column: 1/5;	
+	}
+
+	header h1 {
+		margin-top: 25px;
+		margin-left: -25px;
+		grid-column: 2/5;
+		grid-row: 1/2;
+	}
+	
+	header p {
+		margin-top: -20px;
+		margin-left: -25px;
+		grid-column: 2/5;
+		grid-row: 2/3;
+	}
+
+	#plan div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		margin: 0 auto;
+        padding: 70px 0px;
+	}
+
+	#testimonials div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	fieldset {
+		display: flex;
+	}
+
+	.radio-input {
+		margin-right: 10px;
+	}
+
+	#img-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	picture {
+		grid-column: 1/3;
+	}
+
+	input[type="submit"] {
+		width: 44%;
+		margin-right: 0;
+	}
+
+	a {
+		margin-top: 4px;
+	}
+
+	footer {
+		padding-bottom: 30px;
+	}
+
+	footer p {
+		position: absolute;
+		left: 0;
+	}
+
+	footer a:nth-child(2) {
+		position: absolute;
+		right: 150px;
+	}
+	footer a:nth-child(3) {
+		position: absolute;
+		right: 0;
+	}
+	
+}
+
+@media screen and (min-width:820px) {
+	#about div {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+
+@media screen and (min-width: 950px) {
+
+	#intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		margin-top: 0px;
+	}
+
+	#intro h2, #intro p {
+		grid-column: 1/3;
+	}
+
+	header {
+		margin-bottom: -50px;
+	}
+
+	header nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	header input ~ ul {
+		position: absolute;
+		margin-top: 0;
+		right: 0;
+		top: 0;
+	}
+
+	header h1 {
+		position: absolute;
+		top: 30px;
+		left: 235px;
+	}
+
+	header p {
+		position: absolute;
+		top: 140px;
+		left: 235px;
+	}
+
+	li {
+		font-size: 12px;
+		width: 115px;
+		padding: 15px 15px 20px 15px;
+	}
+
+	#img-grid {
+		grid-column: 3/6;
+	}
+
+	#plan div section a img {
+		width: 100%;
+		height: auto;
+	}
+
+	#plan div {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	#testimonials div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#contact {
+		max-width: 1400px;
+		display: block;
+	}
+
+	#nums {
+		width: 90%;
+		margin-left: 10px;
+	}
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 2rem;
+		width: 93%;
+	}
+
+	#nums {
+		grid-column: 2/3;
+	}
+}
+
